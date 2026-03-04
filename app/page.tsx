@@ -32,7 +32,7 @@ export default async function Home() {
               </p>
               <div className="flex gap-2 flex-wrap">
                 {meta.ultimas_dezenas.map((n: string) => (
-                  <NumberBall key={n} number={parseInt(n)} size="lg" />
+                  <NumberBall key={n} number={parseInt(n)} size="lg" variant="white" />
                 ))}
               </div>
             </div>
