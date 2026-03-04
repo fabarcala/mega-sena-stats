@@ -24,15 +24,15 @@ function formatMoney(value: number) {
 
 export default function LastDraws({ draws }: Props) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       {[...draws].reverse().map((draw) => (
         <div
           key={draw.concurso}
-          className="flex flex-col sm:flex-row sm:items-center gap-3 bg-gray-800 rounded-xl px-4 py-3"
+          className="flex flex-col sm:flex-row sm:items-center gap-3 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3"
         >
           <div className="flex-shrink-0 w-24">
-            <p className="text-xs text-gray-400">#{draw.concurso}</p>
-            <p className="text-xs text-gray-500">{draw.data}</p>
+            <p className="text-xs font-semibold text-[#005CA9]">#{draw.concurso}</p>
+            <p className="text-xs text-slate-400">{draw.data}</p>
           </div>
           <div className="flex gap-2 flex-wrap">
             {draw.dezenas.map((n) => (
@@ -41,13 +41,13 @@ export default function LastDraws({ draws }: Props) {
           </div>
           <div className="sm:ml-auto text-right">
             {draw.acumulou ? (
-              <span className="text-xs font-semibold text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded-full">
+              <span className="text-xs font-semibold text-amber-600 bg-amber-50 border border-amber-200 px-2 py-1 rounded-full">
                 Acumulou
               </span>
             ) : (
               <div>
-                <p className="text-xs text-gray-400">{draw.ganhadores_sena} ganhador(es)</p>
-                <p className="text-sm font-semibold text-green-400">{formatMoney(draw.premio_sena)}</p>
+                <p className="text-xs text-slate-400">{draw.ganhadores_sena} ganhador(es)</p>
+                <p className="text-sm font-bold text-[#5BB745]">{formatMoney(draw.premio_sena)}</p>
               </div>
             )}
           </div>

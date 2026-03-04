@@ -20,10 +20,10 @@ export default function FrequencyChart({ data }: Props) {
 
   const getColor = (vezes: number) => {
     const ratio = (vezes - min) / (max - min);
-    if (ratio > 0.75) return "#22c55e"; // verde
-    if (ratio > 0.5) return "#84cc16";  // verde claro
-    if (ratio > 0.25) return "#eab308"; // amarelo
-    return "#ef4444";                   // vermelho
+    if (ratio > 0.75) return "#005CA9";
+    if (ratio > 0.5) return "#4D9DC8";
+    if (ratio > 0.25) return "#7BBFE0";
+    return "#B8D9EF";
   };
 
   return (
@@ -31,13 +31,13 @@ export default function FrequencyChart({ data }: Props) {
       <BarChart data={data} margin={{ top: 4, right: 4, bottom: 4, left: -20 }}>
         <XAxis
           dataKey="numero"
-          tick={{ fill: "#9ca3af", fontSize: 10 }}
+          tick={{ fill: "#94a3b8", fontSize: 10 }}
           interval={4}
         />
-        <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} />
+        <YAxis tick={{ fill: "#94a3b8", fontSize: 10 }} />
         <Tooltip
-          contentStyle={{ background: "#111827", border: "1px solid #374151", borderRadius: 8 }}
-          labelStyle={{ color: "#f9fafb" }}
+          contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: 8, boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }}
+          labelStyle={{ color: "#1a1a2e", fontWeight: 600 }}
           formatter={(value: number | undefined) => [`${value ?? 0}x`, "Sorteios"]}
           labelFormatter={(label) => `Número ${label}`}
         />
