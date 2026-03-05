@@ -20,7 +20,7 @@ export default function NumberBall({ number, size = "md", highlight = false, var
     : variant === "blue"
     ? "bg-[#005CA9] text-white shadow-md"
     : highlight
-    ? "bg-amber-500 text-white shadow-md"
+    ? "bg-[#005CA9] text-white shadow-md"
     : "bg-[#5BB745] text-white shadow-md"; // padrão: verde Caixa
 
   return (

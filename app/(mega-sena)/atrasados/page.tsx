@@ -25,7 +25,7 @@ export default async function AtrasadosPage() {
           {atrasados.map((item: any) => (
             <div key={item.numero} className="text-center">
               <NumberBall number={item.numero} highlight size="lg" />
-              <p className="text-xs text-slate-400 mt-2">{item.ausente_ha} atrás</p>
+              <p className="text-xs text-slate-400 mt-2">{item.ausente_ha} sorteios</p>
             </div>
           ))}
         </div>
