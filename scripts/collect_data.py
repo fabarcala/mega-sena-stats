@@ -48,6 +48,8 @@ def compute_stats(results: list[dict]) -> dict:
     even_odd = []
     ranges = {f"{10*i+1}-{10*(i+1)}": 0 for i in range(6)}  # 1-10, 11-20, ..., 51-60
     ranges["1-10"] = 0  # fix primeiro intervalo
+    by_weekday_count = {}
+    todos_sorteios = []
 
     last_10 = []
 
@@ -60,6 +62,7 @@ def compute_stats(results: list[dict]) -> dict:
             dt = parse_date(draw["data"])
             wd = weekday_names[dt.weekday()]
             by_weekday[wd].extend(nums)
+            by_weekday_count[wd] = by_weekday_count.get(wd, 0) + 1
         except Exception:
             pass
 
@@ -80,6 +83,9 @@ def compute_stats(results: list[dict]) -> dict:
             key = f"{bucket}-{bucket + 9}"
             if key in ranges:
                 ranges[key] += 1
+
+        # Histórico compacto para check "nunca sorteado"
+        todos_sorteios.append(",".join(str(n) for n in nums))
 
     # Últimos 10 sorteios
     last_10 = results[-10:]
@@ -126,9 +132,10 @@ def compute_stats(results: list[dict]) -> dict:
             "tres_ou_mais": sum(1 for x in consecutive_counts if x >= 3),
         },
         "por_dia": {
-            day: dict(Counter(nums).most_common(5))
-            for day, nums in by_weekday.items() if nums
+            day: by_weekday_count.get(day, 0)
+            for day in ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
         },
+        "todos_sorteios": todos_sorteios,
         "ultimos_10": [
             {
                 "concurso": d["concurso"],

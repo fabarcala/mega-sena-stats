@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { BarChart2, TrendingUp, Clock, CalendarDays, Trophy, Sparkles, ChevronDown } from "lucide-react";
+import { BarChart2, TrendingUp, Clock, CalendarDays, Trophy, Sparkles, ChevronDown, Layers, SigmaSquare, GitMerge } from "lucide-react";
 
 const LOTERIAS = [
   { id: "mega", label: "Mega-Sena", active: true },
@@ -16,8 +16,12 @@ const NAV = [
   { href: "/frequencia", label: "Frequência dos números", icon: <BarChart2 size={15} /> },
   { href: "/mais-sorteados", label: "Mais & Menos sorteados", icon: <TrendingUp size={15} /> },
   { href: "/atrasados", label: "Números atrasados", icon: <Clock size={15} /> },
+  { href: "/faixas", label: "Faixas de dezenas", icon: <Layers size={15} /> },
+  { href: "/pares-impares", label: "Pares & Ímpares", icon: <GitMerge size={15} /> },
+  { href: "/somatorio", label: "Somatório", icon: <SigmaSquare size={15} /> },
+  { href: "/consecutivos", label: "Consecutivos", icon: <CalendarDays size={15} /> },
   { href: "/sorteios", label: "Sorteios", icon: <CalendarDays size={15} /> },
-  { href: "/recordes", label: "Recordes & Curiosidades", icon: <Trophy size={15} /> },
+  { href: "/curiosidades", label: "Curiosidades", icon: <Trophy size={15} /> },
 ];
 
 const SPECIAL = { href: "/sugerir-numeros", label: "Sugerir números", icon: <Sparkles size={15} /> };
