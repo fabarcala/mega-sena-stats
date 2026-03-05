@@ -13,7 +13,7 @@ export default async function MegaSenaLayout({ children }: { children: React.Rea
         <div className="max-w-6xl mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Mega Sena Stats</h1>
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Mega Sena</h1>
               <p className="text-blue-200 mt-1 text-sm">
                 Analise {meta.total_concursos} sorteios e monte sua aposta com inteligência
               </p>
