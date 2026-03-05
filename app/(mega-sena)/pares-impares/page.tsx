@@ -17,7 +17,7 @@ export default async function ParesImparesPage() {
 
   return (
     <section>
-      <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Distribuição de Pares & Ímpares</h2>
+      <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Distribuição de pares e ímpares</h2>
       <p className="text-slate-400 text-sm mb-8">
         Em quantos sorteios saíram 0, 1, 2 ... 6 números pares? Média histórica: <strong className="text-[#005CA9]">{pares_impares.media_pares} pares</strong> por sorteio.
       </p>

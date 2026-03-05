@@ -27,7 +27,7 @@ export default function FrequencyChart({ data }: Props) {
   };
 
   return (
-    <ResponsiveContainer width="100%" height={220}>
+    <ResponsiveContainer width="100%" height="100%">
       <BarChart data={data} margin={{ top: 4, right: 4, bottom: 4, left: -20 }}>
         <XAxis
           dataKey="numero"

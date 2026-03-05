@@ -15,7 +15,7 @@ export default async function AtrasadosPage() {
   return (
     <section>
       <h2 className="text-xl font-bold text-[#1a1a2e] mb-2 flex items-center gap-2">
-        <Clock size={18} className="text-amber-500" /> Números mais atrasados
+        <Clock size={18} className="text-[#005CA9]" /> Números mais atrasados
       </h2>
       <p className="text-slate-400 text-sm mb-6">
         Dezenas que estão há mais tempo sem aparecer nos sorteios da Mega-Sena.

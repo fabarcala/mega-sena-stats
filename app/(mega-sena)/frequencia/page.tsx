@@ -17,7 +17,9 @@ export default async function FrequenciaPage() {
         Quantas vezes cada dezena foi sorteada ao longo de {stats.meta.total_concursos} concursos.
       </p>
       <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-        <FrequencyChart data={stats.frequencia} />
+        <div style={{ width: "100%", height: 240 }}>
+          <FrequencyChart data={stats.frequencia} />
+        </div>
         <p className="text-xs text-slate-400 mt-3 text-center">
           Azul escuro = mais sorteado · Azul claro = menos sorteado
         </p>
