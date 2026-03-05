@@ -53,67 +53,76 @@ export default function StatsClient({ stats }: { stats: any }) {
   })();
 
   return (
-    <div>
-      {/* Nav bar */}
-      <div className="border-b border-slate-100 bg-white sticky top-0 z-10 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center gap-6 py-3 overflow-x-auto scrollbar-hide">
+    <div className="max-w-6xl mx-auto px-4 py-8 flex gap-8 items-start">
 
-            {/* Lottery selector */}
-            <div className="relative flex-shrink-0">
-              <button
-                onClick={() => setLoteiraOpen(!loteiraOpen)}
-                className="flex items-center gap-1.5 text-sm font-semibold text-[#005CA9] border border-[#005CA9] rounded-lg px-3 py-1.5 hover:bg-blue-50 transition-colors"
-              >
-                Mega-Sena <ChevronDown size={14} className={`transition-transform ${loteiraOpen ? "rotate-180" : ""}`} />
-              </button>
-              {loteiraOpen && (
-                <div className="absolute top-full left-0 mt-1 bg-white border border-slate-200 rounded-xl shadow-lg py-1 min-w-[160px] z-20">
-                  {LOTERIAS.map((l) => (
-                    <button
-                      key={l.id}
-                      onClick={() => l.active && setLoteiraOpen(false)}
-                      className={`w-full text-left px-4 py-2 text-sm flex items-center justify-between gap-3 transition-colors
-                        ${l.active ? "text-[#005CA9] font-semibold hover:bg-blue-50" : "text-slate-300 cursor-default"}`}
-                    >
-                      {l.label}
-                      {!l.active && <span className="text-xs bg-slate-100 text-slate-400 px-1.5 py-0.5 rounded-full">em breve</span>}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+      {/* Sidebar esquerda */}
+      <aside className="w-56 flex-shrink-0 sticky top-8">
 
-            {/* Divider */}
-            <div className="h-6 w-px bg-slate-200 flex-shrink-0" />
-
-            {/* Tabs */}
-            <div className="flex items-center gap-2 flex-shrink-0">
-              {TABS.map((tab) => (
+        {/* Seletor de loteria */}
+        <div className="relative mb-6">
+          <button
+            onClick={() => setLoteiraOpen(!loteiraOpen)}
+            className="w-full flex items-center justify-between gap-2 text-sm font-bold text-[#005CA9] border-2 border-[#005CA9] rounded-xl px-4 py-3 hover:bg-blue-50 transition-colors"
+          >
+            Mega-Sena <ChevronDown size={15} className={`transition-transform ${loteiraOpen ? "rotate-180" : ""}`} />
+          </button>
+          {loteiraOpen && (
+            <div className="absolute top-full left-0 mt-1 bg-white border border-slate-200 rounded-xl shadow-lg py-1 w-full z-20">
+              {LOTERIAS.map((l) => (
                 <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg font-medium transition-colors whitespace-nowrap
-                    ${tab.special
-                      ? activeTab === tab.id
-                        ? "bg-[#5BB745] text-white"
-                        : "border border-[#5BB745] text-[#5BB745] hover:bg-green-50"
-                      : activeTab === tab.id
-                        ? "bg-[#005CA9] text-white"
-                        : "text-slate-500 hover:text-[#005CA9] hover:bg-blue-50"
-                    }`}
+                  key={l.id}
+                  onClick={() => l.active && setLoteiraOpen(false)}
+                  className={`w-full text-left px-4 py-2.5 text-sm flex items-center justify-between gap-2 transition-colors
+                    ${l.active ? "text-[#005CA9] font-semibold hover:bg-blue-50" : "text-slate-300 cursor-default"}`}
                 >
-                  {tab.icon}
-                  {tab.label}
+                  {l.label}
+                  {!l.active && <span className="text-xs bg-slate-100 text-slate-400 px-1.5 py-0.5 rounded-full">em breve</span>}
                 </button>
               ))}
             </div>
-          </div>
+          )}
         </div>
-      </div>
+
+        {/* Separador */}
+        <div className="h-px bg-slate-100 mb-3" />
+
+        {/* Nav buttons */}
+        <nav className="flex flex-col gap-1">
+          {TABS.filter(t => !t.special).map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-2.5 text-sm px-4 py-2.5 rounded-xl font-medium transition-colors text-left
+                ${activeTab === tab.id
+                  ? "bg-[#005CA9] text-white"
+                  : "text-slate-500 hover:text-[#005CA9] hover:bg-blue-50"}`}
+            >
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
+
+          {/* Separador antes do Sugerir */}
+          <div className="h-px bg-slate-100 my-2" />
+
+          {TABS.filter(t => t.special).map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-2.5 text-sm px-4 py-2.5 rounded-xl font-medium transition-colors text-left
+                ${activeTab === tab.id
+                  ? "bg-[#5BB745] text-white"
+                  : "text-[#5BB745] border border-[#5BB745] hover:bg-green-50"}`}
+            >
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
+        </nav>
+      </aside>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 py-10">
+      <div className="flex-1 min-w-0 py-0">
 
         {/* Frequência */}
         {activeTab === "frequencia" && (
@@ -254,6 +263,7 @@ export default function StatsClient({ stats }: { stats: any }) {
           Dados da Caixa Econômica Federal · Atualizado automaticamente · Desenvolvido com ❤️
         </footer>
       </div>
+
     </div>
   );
 }
