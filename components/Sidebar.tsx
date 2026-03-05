@@ -38,7 +38,7 @@ export default function Sidebar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <aside className="w-56 flex-shrink-0 sticky top-8">
+    <aside className="w-full md:w-56 md:flex-shrink-0 md:sticky md:top-8">
       {/* Seletor de loteria */}
       <div className="relative mb-6">
         <button

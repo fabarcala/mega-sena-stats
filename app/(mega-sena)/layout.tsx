@@ -22,7 +22,14 @@ export default async function MegaSenaLayout({ children }: { children: React.Rea
               <p className="text-blue-200 text-xs font-medium uppercase tracking-wide">
                 Último sorteio · #{meta.ultimo_concurso}
               </p>
-              <div className="flex gap-2 flex-wrap">
+              {/* Mobile: bolinhas menores */}
+              <div className="flex gap-1.5 md:hidden">
+                {meta.ultimas_dezenas.map((n: string) => (
+                  <NumberBall key={n} number={parseInt(n)} size="sm" />
+                ))}
+              </div>
+              {/* Desktop: bolinhas grandes */}
+              <div className="hidden md:flex gap-2">
                 {meta.ultimas_dezenas.map((n: string) => (
                   <NumberBall key={n} number={parseInt(n)} size="lg" />
                 ))}
@@ -33,7 +40,7 @@ export default async function MegaSenaLayout({ children }: { children: React.Rea
       </header>
 
       {/* Layout: Sidebar + Conteúdo */}
-      <div className="max-w-6xl mx-auto px-4 py-8 flex gap-8 items-start">
+      <div className="max-w-6xl mx-auto px-4 py-6 md:py-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
         <Sidebar />
         <div className="flex-1 min-w-0">
           {children}
