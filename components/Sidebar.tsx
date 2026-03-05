@@ -9,7 +9,14 @@ const LOTERIAS = [
   { id: "mega", label: "Mega-Sena", active: true },
   { id: "lotofacil", label: "Lotofácil", active: false },
   { id: "quina", label: "Quina", active: false },
+  { id: "lotomania", label: "Lotomania", active: false },
   { id: "timemania", label: "Timemania", active: false },
+  { id: "duplasena", label: "Dupla Sena", active: false },
+  { id: "federal", label: "Federal", active: false },
+  { id: "loteca", label: "Loteca", active: false },
+  { id: "diasorte", label: "Dia de Sorte", active: false },
+  { id: "supersete", label: "Super Sete", active: false },
+  { id: "milionaria", label: "+Milionária", active: false },
 ];
 
 const NAV = [
