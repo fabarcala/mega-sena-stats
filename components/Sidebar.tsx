@@ -21,10 +21,10 @@ const LOTERIAS = [
 
 const NAV = [
   { href: "/frequencia", label: "Frequência dos números", icon: <BarChart2 size={15} /> },
-  { href: "/mais-sorteados", label: "Mais e Menos sorteados", icon: <TrendingUp size={15} /> },
+  { href: "/mais-sorteados", label: "Mais e menos sorteados", icon: <TrendingUp size={15} /> },
   { href: "/atrasados", label: "Números atrasados", icon: <Clock size={15} /> },
   { href: "/faixas", label: "Faixas de dezenas", icon: <Layers size={15} /> },
-  { href: "/pares-impares", label: "Pares e Ímpares", icon: <GitMerge size={15} /> },
+  { href: "/pares-impares", label: "Pares e ímpares", icon: <GitMerge size={15} /> },
   { href: "/somatorio", label: "Somatório", icon: <SigmaSquare size={15} /> },
   { href: "/consecutivos", label: "Consecutivos", icon: <CalendarDays size={15} /> },
   { href: "/sorteios", label: "Sorteios", icon: <CalendarDays size={15} /> },
