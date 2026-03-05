@@ -6,7 +6,7 @@ import FrequencyChart from "./FrequencyChart";
 import LastDraws from "./LastDraws";
 import NumberBall from "./NumberBall";
 
-type Tab = "frequencia" | "mais_menos" | "atrasados" | "ultimos" | "curiosidades" | "sugerir";
+type Tab = "frequencia" | "mais_menos" | "atrasados" | "sorteios" | "recordes" | "sugerir";
 
 const LOTERIAS = [
   { id: "mega", label: "Mega-Sena", active: true },
@@ -18,9 +18,9 @@ const LOTERIAS = [
 const TABS: { id: Tab; label: string; icon?: React.ReactNode; special?: boolean }[] = [
   { id: "frequencia", label: "Frequência", icon: <BarChart2 size={14} /> },
   { id: "mais_menos", label: "Mais & Menos sorteados", icon: <TrendingUp size={14} /> },
-  { id: "atrasados", label: "Atrasados", icon: <Clock size={14} /> },
-  { id: "ultimos", label: "Últimos sorteios" },
-  { id: "curiosidades", label: "Curiosidades" },
+  { id: "atrasados", label: "Números atrasados", icon: <Clock size={14} /> },
+  { id: "sorteios", label: "Sorteios", icon: <TrendingDown size={14} /> },
+  { id: "recordes", label: "Recordes & Curiosidades", icon: <span>🏆</span> },
   { id: "sugerir", label: "Sugerir números", icon: <Sparkles size={14} />, special: true },
 ];
 
@@ -34,15 +34,17 @@ function formatMoney(value: number) {
 
 export default function StatsClient({ stats }: { stats: any }) {
   const [activeTab, setActiveTab] = useState<Tab>("frequencia");
+  const [randomKey, setRandomKey] = useState(0);
   const [loteiraOpen, setLoteiraOpen] = useState(false);
   const [suggestMethod, setSuggestMethod] = useState<SuggestMethod>("atrasados");
 
-  const { meta, mais_sorteados, menos_sorteados, atrasados, somatorio, recordes, ultimos_10, pares_impares, consecutivos } = stats;
+  const { meta, mais_sorteados, menos_sorteados, atrasados, somatorio, recordes, ultimos_10, pares_impares, consecutivos, faixas, por_dia } = stats;
 
   const suggestedNumbers: number[] = (() => {
     if (suggestMethod === "atrasados") return atrasados.slice(0, 6).map((x: any) => x.numero).sort((a: number, b: number) => a - b);
     if (suggestMethod === "frequentes") return mais_sorteados.slice(0, 6).map((x: any) => x.numero).sort((a: number, b: number) => a - b);
-    // aleatorio
+    // aleatorio — randomKey força recalculo
+    void randomKey;
     const pool = Array.from({ length: 60 }, (_, i) => i + 1);
     const picked: number[] = [];
     while (picked.length < 6) {
@@ -182,24 +184,81 @@ export default function StatsClient({ stats }: { stats: any }) {
           </section>
         )}
 
-        {/* Últimos sorteios */}
-        {activeTab === "ultimos" && (
-          <section>
-            <h2 className="text-xl font-bold text-[#1a1a2e] mb-6">Últimos 10 sorteios</h2>
-            <LastDraws draws={ultimos_10} />
+        {/* Sorteios */}
+        {activeTab === "sorteios" && (
+          <section className="space-y-8">
+            <div>
+              <h2 className="text-xl font-bold text-[#1a1a2e] mb-6">Últimos 10 sorteios</h2>
+              <LastDraws draws={ultimos_10} />
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold text-[#1a1a2e] mb-4">Sorteios por dia da semana</h2>
+              <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div className="space-y-3">
+                  {Object.entries(por_dia as Record<string, number>)
+                    .filter(([, v]) => (v as number) > 0)
+                    .sort((a, b) => (b[1] as number) - (a[1] as number))
+                    .map(([dia, total]) => {
+                      const max = Math.max(...Object.values(por_dia as Record<string, number>).filter(v => v > 0));
+                      const pct = Math.round(((total as number) / (max as number)) * 100);
+                      return (
+                        <div key={dia} className="flex items-center gap-3">
+                          <span className="text-sm text-slate-600 w-20 font-medium">{dia}</span>
+                          <div className="flex-1 bg-slate-100 rounded-full h-2">
+                            <div className="h-2 rounded-full bg-[#005CA9]" style={{ width: `${pct}%` }} />
+                          </div>
+                          <span className="text-xs text-slate-400 w-16 text-right">{total as number} sorteios</span>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            </div>
           </section>
         )}
 
-        {/* Curiosidades */}
-        {activeTab === "curiosidades" && (
-          <section>
-            <h2 className="text-xl font-bold text-[#1a1a2e] mb-6">Curiosidades</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <CuriCard title="Pares vs Ímpares" value={`Média de ${pares_impares.media_pares} pares por sorteio`} />
-              <CuriCard title="Consecutivos" value={`${Math.round(consecutivos.nenhum / meta.total_concursos * 100)}% dos sorteios sem números consecutivos`} />
-              <CuriCard title="Somatório" value={`Mínimo ${somatorio.minimo} · Máximo ${somatorio.maximo} · Média ${somatorio.media}`} />
-              <CuriCard title="Maior Prêmio" value={`${formatMoney(recordes.maior_premio.valor)} no concurso ${recordes.maior_premio.concurso}`} />
-              <CuriCard title="Somatório médio" value={`${somatorio.media} por sorteio`} />
+        {/* Recordes & Curiosidades */}
+        {activeTab === "recordes" && (
+          <section className="space-y-8">
+            <div>
+              <h2 className="text-xl font-bold text-[#1a1a2e] mb-4">Recordes</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                <CuriCard title="🏆 Maior prêmio da história" value={`${formatMoney(recordes.maior_premio.valor)} · Concurso ${recordes.maior_premio.concurso}`} />
+                <CuriCard title="👥 Mais ganhadores na sena" value={`${recordes.mais_ganhadores.ganhadores} ganhadores · Concurso ${recordes.mais_ganhadores.concurso}`} />
+                <CuriCard title="📅 Primeiro sorteio" value={`${recordes.data_primeiro_sorteio} · Concurso ${recordes.concurso_mais_antigo}`} />
+                <CuriCard title="🎲 Total de sorteios" value={`${meta.total_concursos} concursos realizados`} />
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold text-[#1a1a2e] mb-4">Frequência por faixa de dezenas</h2>
+              <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div className="space-y-3">
+                  {Object.entries(faixas as Record<string, number>).map(([faixa, total]) => {
+                    const max = Math.max(...Object.values(faixas as Record<string, number>));
+                    const pct = Math.round(((total as number) / max) * 100);
+                    return (
+                      <div key={faixa} className="flex items-center gap-3">
+                        <span className="text-sm text-slate-600 w-16 font-medium">{faixa}</span>
+                        <div className="flex-1 bg-slate-100 rounded-full h-2">
+                          <div className="h-2 rounded-full bg-[#5BB745]" style={{ width: `${pct}%` }} />
+                        </div>
+                        <span className="text-xs text-slate-400 w-20 text-right">{total as number} dezenas</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold text-[#1a1a2e] mb-4">Curiosidades</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <CuriCard title="Pares vs Ímpares" value={`Média de ${pares_impares.media_pares} pares por sorteio`} />
+                <CuriCard title="Sem consecutivos" value={`${Math.round(consecutivos.nenhum / meta.total_concursos * 100)}% dos sorteios`} />
+                <CuriCard title="Somatório" value={`Mín ${somatorio.minimo} · Máx ${somatorio.maximo} · Média ${somatorio.media}`} />
+              </div>
             </div>
           </section>
         )}
@@ -245,7 +304,7 @@ export default function StatsClient({ stats }: { stats: any }) {
               </p>
               {suggestMethod === "aleatorio" && (
                 <button
-                  onClick={() => setSuggestMethod("aleatorio")}
+                  onClick={() => setRandomKey(k => k + 1)}
                   className="mt-4 text-xs text-[#005CA9] hover:underline"
                 >
                   Gerar novos números
