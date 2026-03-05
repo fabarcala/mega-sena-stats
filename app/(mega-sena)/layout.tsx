@@ -1,6 +1,7 @@
 import { getStats } from "@/lib/stats";
 import NumberBall from "@/components/NumberBall";
 import Sidebar from "@/components/Sidebar";
+import AdUnit from "@/components/AdUnit";
 
 export default async function MegaSenaLayout({ children }: { children: React.ReactNode }) {
   const stats = await getStats();
@@ -42,12 +43,21 @@ export default async function MegaSenaLayout({ children }: { children: React.Rea
         </div>
       </header>
 
+      {/* Spot 1 — Entre header e conteúdo (maior RPM) */}
+      <div className="max-w-6xl mx-auto px-4 pt-4">
+        <AdUnit slot="SLOT_HEADER" />
+      </div>
+
       {/* Layout: Sidebar + Conteúdo */}
       <div className="max-w-6xl mx-auto px-4 py-6 md:py-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
         <Sidebar />
         <div className="flex-1 min-w-0">
           {children}
-          <footer className="text-center text-slate-300 text-xs pt-12 pb-4 border-t border-slate-100 mt-12">
+
+          {/* Spot 3 — Antes do footer */}
+          <AdUnit slot="SLOT_FOOTER" />
+
+          <footer className="text-center text-slate-300 text-xs pt-6 pb-4 border-t border-slate-100 mt-4">
             Dados da Caixa Econômica Federal · Atualizado automaticamente · Desenvolvido com ❤️
           </footer>
         </div>

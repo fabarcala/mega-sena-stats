@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { getStats } from "@/lib/stats";
 import FrequencyChart from "@/components/FrequencyChart";
+import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Quais números mais saem na Mega-Sena? | Mega Sena Stats",
@@ -46,6 +47,9 @@ export default async function FrequenciaPage() {
           Azul escuro = mais sorteado · Azul claro = menos sorteado
         </p>
       </div>
+
+      {/* Spot 2 — Após o gráfico */}
+      <AdUnit slot="SLOT_MID" />
     </section>
   );
 }
