@@ -15,7 +15,10 @@ export default async function MegaSenaLayout({ children }: { children: React.Rea
             <div>
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Mega Sena Stats</h1>
               <p className="text-blue-200 mt-1 text-sm">
-                {meta.total_concursos} concursos analisados · Atualizado em {meta.ultima_data}
+                Analise {meta.total_concursos} sorteios e monte sua aposta com inteligência
+              </p>
+              <p className="text-blue-300 mt-0.5 text-xs">
+                Atualizado em {meta.ultima_data}
               </p>
             </div>
             <div className="flex flex-col items-start md:items-end gap-1">
