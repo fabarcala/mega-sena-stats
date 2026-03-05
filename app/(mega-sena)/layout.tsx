@@ -45,7 +45,7 @@ export default async function MegaSenaLayout({ children }: { children: React.Rea
 
       {/* Spot 1 — Entre header e conteúdo (maior RPM) */}
       <div className="max-w-6xl mx-auto px-4 pt-4">
-        <AdUnit slot="SLOT_HEADER" />
+        <AdUnit slot="9934893126" />
       </div>
 
       {/* Layout: Sidebar + Conteúdo */}
@@ -55,7 +55,7 @@ export default async function MegaSenaLayout({ children }: { children: React.Rea
           {children}
 
           {/* Spot 3 — Antes do footer */}
-          <AdUnit slot="SLOT_FOOTER" />
+          <AdUnit slot="1342087234" />
 
           <footer className="text-center text-slate-300 text-xs pt-6 pb-4 border-t border-slate-100 mt-4">
             Dados da Caixa Econômica Federal · Atualizado automaticamente · Desenvolvido com ❤️

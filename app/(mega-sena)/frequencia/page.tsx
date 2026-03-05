@@ -49,7 +49,7 @@ export default async function FrequenciaPage() {
       </div>
 
       {/* Spot 2 — Após o gráfico */}
-      <AdUnit slot="SLOT_MID" />
+      <AdUnit slot="9300468307" />
     </section>
   );
 }

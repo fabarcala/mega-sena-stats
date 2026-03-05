@@ -19,7 +19,7 @@ export default async function SugerirPage() {
       </p>
 
       {/* Spot 4 — /sugerir-numeros, acima dos filtros */}
-      <AdUnit slot="SLOT_SUGERIR" />
+      <AdUnit slot="9029005565" />
 
       <SugerirClient
         atrasados={stats.atrasados}
