@@ -14,6 +14,8 @@ export default async function FaixasPage() {
   const entries = Object.entries(faixas as Record<string, number>);
   const max = Math.max(...entries.map(([, v]) => v));
   const total = entries.reduce((acc, [, v]) => acc + v, 0);
+  const faixaMaisFrequente = entries.reduce((a, b) => b[1] > a[1] ? b : a);
+  const faixaMaisFrequentePct = ((faixaMaisFrequente[1] / total) * 100).toFixed(1);
 
   return (
     <section>
@@ -28,6 +30,15 @@ export default async function FaixasPage() {
           <p className="text-sm text-green-600">Distribua suas dezenas por faixas e gere uma combinação inédita →</p>
         </div>
       </Link>
+
+      {/* Destaque — gancho visual */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+        <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-1">📊 Destaque histórico</p>
+        <p className="text-2xl font-bold text-amber-700">Faixa {faixaMaisFrequente[0]}</p>
+        <p className="text-sm text-amber-800 mt-1">
+          é a mais frequente: aparece em <strong>{faixaMaisFrequentePct}%</strong> das dezenas sorteadas em toda a história. Veja se isso influencia sua aposta.
+        </p>
+      </div>
 
       <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Frequência por faixa de dezenas</h2>
       <p className="text-slate-400 text-sm mb-8">

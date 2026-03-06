@@ -12,6 +12,8 @@ export default async function ConsecutivosPage() {
   const { consecutivos, meta } = stats;
 
   const total = meta.total_concursos;
+  const comPeloMenos1 = consecutivos.um_par + consecutivos.dois_pares + consecutivos.tres_ou_mais;
+  const pctComConsecutivo = ((comPeloMenos1 / total) * 100).toFixed(0);
 
   const items = [
     { label: "Nenhum consecutivo", count: consecutivos.nenhum, desc: "Ex: 5, 12, 23, 34, 47, 58" },
@@ -35,6 +37,15 @@ export default async function ConsecutivosPage() {
           <p className="text-sm text-green-600">Escolha se quer consecutivos ou não e gere uma combinação inédita →</p>
         </div>
       </Link>
+
+      {/* Destaque — gancho visual */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+        <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-1">🤯 Você sabia?</p>
+        <p className="text-2xl font-bold text-amber-700">{pctComConsecutivo}% dos sorteios</p>
+        <p className="text-sm text-amber-800 mt-1">
+          têm pelo menos 1 par de números consecutivos. A maioria dos apostadores evita — mas os dados contam outra história.
+        </p>
+      </div>
 
       <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Números consecutivos por sorteio</h2>
       <p className="text-slate-400 text-sm mb-8">

@@ -43,6 +43,15 @@ export default async function CuriosidadesPage() {
         </div>
       </Link>
 
+      {/* Destaque — gancho visual */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+        <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-1">🎲 Você sabia?</p>
+        <p className="text-2xl font-bold text-amber-700">1 em 50.063.860</p>
+        <p className="text-sm text-amber-800 mt-1">
+          São suas chances de ganhar na sena com um jogo simples. Se você jogasse um bilhete diferente toda semana, levaria <strong>~500.000 anos</strong> para cobrir todas as combinações.
+        </p>
+      </div>
+
       <div>
         <h2 className="text-xl font-bold text-[#1a1a2e] mb-4">🏆 Recordes históricos</h2>
         <div className="grid md:grid-cols-2 gap-4">

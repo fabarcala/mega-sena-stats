@@ -28,6 +28,15 @@ export default async function SorteiosPage() {
         </div>
       </Link>
 
+      {/* Destaque — gancho visual */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+        <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-1">🗓️ Próximo sorteio</p>
+        <p className="text-2xl font-bold text-amber-700">Quarta e Sábado</p>
+        <p className="text-sm text-amber-800 mt-1">
+          A Mega-Sena sorteia sempre às <strong>20h</strong> (horário de Brasília). Veja abaixo os últimos resultados atualizados automaticamente.
+        </p>
+      </div>
+
       <div>
         <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Últimos 10 sorteios</h2>
         <p className="text-slate-400 text-sm mb-6">Resultados mais recentes da Mega-Sena.</p>

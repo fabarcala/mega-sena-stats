@@ -13,6 +13,8 @@ export default async function AtrasadosPage() {
   const stats = await getStats();
   const { atrasados } = stats;
 
+  const maisAtrasado = atrasados[0];
+
   return (
     <section className="space-y-8">
       {/* Banner CTA */}
@@ -26,6 +28,17 @@ export default async function AtrasadosPage() {
           <p className="text-sm text-green-600">Inclua os mais atrasados e gere uma combinação inédita →</p>
         </div>
       </Link>
+
+      {/* Destaque — gancho visual */}
+      {maisAtrasado && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-1">⏳ Recordista de ausência</p>
+          <p className="text-2xl font-bold text-amber-700">Número {maisAtrasado.numero}</p>
+          <p className="text-sm text-amber-800 mt-1">
+            está sumido há <strong>{maisAtrasado.ausente_ha} sorteios</strong> — o mais atrasado da Mega-Sena agora. Será que aparece no próximo?
+          </p>
+        </div>
+      )}
 
       <div>
         <h2 className="text-xl font-bold text-[#1a1a2e] mb-2 flex items-center gap-2">
