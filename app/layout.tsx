@@ -12,6 +12,9 @@ const BASE_URL = "https://mega-sena-stats.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  verification: {
+    google: "FsK1bQsMV0KOT8BtTm1LYCVJ_xG1aXt77pwycRe2PRc",
+  },
   title: {
     default: "Mega Sena Stats — Estatísticas e análises dos sorteios da Mega-Sena",
     template: "%s | Mega Sena Stats",
