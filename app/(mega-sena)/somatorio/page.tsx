@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { getStats } from "@/lib/stats";
 
 export const metadata: Metadata = {
-  title: "Somatório das Dezenas | Mega Sena Stats",
-  description: "Qual é a soma mais comum das 6 dezenas sorteadas na Mega-Sena? Veja o histograma completo e descubra a faixa de somatório mais frequente.",
+  title: "Somatório das Dezenas da Mega-Sena — Qual Faixa Sai Mais? | Mega Sena Stats",
+  description: "Qual é a soma mais comum das 6 dezenas sorteadas na Mega-Sena? Histograma completo do somatório em todos os concursos. Descubra a faixa ideal para sua aposta.",
 };
 
 export default async function SomatorioPage() {
@@ -16,6 +17,18 @@ export default async function SomatorioPage() {
 
   return (
     <section>
+      {/* Banner CTA */}
+      <Link
+        href="/sugerir-numeros"
+        className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4 mb-6 hover:bg-green-100 transition"
+      >
+        <span className="text-2xl">🎯</span>
+        <div>
+          <p className="font-semibold text-green-800">Monte sua aposta baseada em estatísticas</p>
+          <p className="text-sm text-green-600">Filtre pelo somatório ideal e gere uma combinação inédita →</p>
+        </div>
+      </Link>
+
       <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Somatório das dezenas sorteadas</h2>
       <p className="text-slate-400 text-sm mb-8">
         A soma das 6 dezenas varia de <strong className="text-[#1a1a2e]">{somatorio.minimo}</strong> a{" "}

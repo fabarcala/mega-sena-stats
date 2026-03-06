@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { getStats } from "@/lib/stats";
 import { Clock } from "lucide-react";
 import NumberBall from "@/components/NumberBall";
 
 export const metadata: Metadata = {
-  title: "Números Atrasados da Mega-Sena | Mega Sena Stats",
-  description: "Quais números estão há mais tempo sem aparecer na Mega-Sena? Veja os 15 números mais atrasados e há quantos sorteios cada um está ausente.",
+  title: "Números Atrasados da Mega-Sena — Quais Estão Sumidos? | Mega Sena Stats",
+  description: "Veja quais números da Mega-Sena estão há mais tempo sem aparecer. Lista atualizada com os mais atrasados e há quantos sorteios cada um está ausente.",
 };
 
 export default async function AtrasadosPage() {
@@ -14,6 +15,18 @@ export default async function AtrasadosPage() {
 
   return (
     <section className="space-y-8">
+      {/* Banner CTA */}
+      <Link
+        href="/sugerir-numeros"
+        className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4 hover:bg-green-100 transition"
+      >
+        <span className="text-2xl">🎯</span>
+        <div>
+          <p className="font-semibold text-green-800">Monte sua aposta baseada em estatísticas</p>
+          <p className="text-sm text-green-600">Inclua os mais atrasados e gere uma combinação inédita →</p>
+        </div>
+      </Link>
+
       <div>
         <h2 className="text-xl font-bold text-[#1a1a2e] mb-2 flex items-center gap-2">
           <Clock size={18} className="text-[#005CA9]" /> Números mais atrasados

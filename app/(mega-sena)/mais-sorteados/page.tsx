@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { getStats } from "@/lib/stats";
 import { TrendingUp, TrendingDown } from "lucide-react";
 import RankRow from "@/components/RankRow";
 
 export const metadata: Metadata = {
-  title: "Números Mais e Menos Sorteados | Mega Sena Stats",
-  description: "Descubra quais números aparecem mais e menos na Mega-Sena. Ranking dos 10 mais sorteados e dos 10 menos frequentes em toda a história do concurso.",
+  title: "10 Números Mais Sorteados da Mega-Sena — Ranking Completo | Mega Sena Stats",
+  description: "Quais números mais saem na Mega-Sena? Veja o ranking completo dos 10 mais e 10 menos sorteados em toda a história do concurso. Dados atualizados automaticamente.",
 };
 
 export default async function MaisSorteadosPage() {
@@ -14,6 +15,18 @@ export default async function MaisSorteadosPage() {
 
   return (
     <div className="space-y-8">
+      {/* Banner CTA */}
+      <Link
+        href="/sugerir-numeros"
+        className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4 hover:bg-green-100 transition"
+      >
+        <span className="text-2xl">🎯</span>
+        <div>
+          <p className="font-semibold text-green-800">Monte sua aposta baseada em estatísticas</p>
+          <p className="text-sm text-green-600">Use os mais sorteados como filtro e gere uma combinação inédita →</p>
+        </div>
+      </Link>
+
       <div className="grid md:grid-cols-2 gap-6">
         <section>
           <h2 className="text-xl font-bold text-[#1a1a2e] mb-4 flex items-center gap-2">

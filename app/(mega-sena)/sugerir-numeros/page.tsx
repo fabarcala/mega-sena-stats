@@ -4,8 +4,8 @@ import SugerirClient from "@/components/SugerirClient";
 import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
-  title: "Sugerir Números para a Mega-Sena | Mega Sena Stats",
-  description: "Gere uma aposta para a Mega-Sena com filtros inteligentes: escolha quantidade de pares, faixa de somatório e se quer consecutivos. Verifica se a combinação já foi sorteada.",
+  title: "Gerador de Apostas da Mega-Sena — Monte com Estatísticas | Mega Sena Stats",
+  description: "Gere apostas para a Mega-Sena usando estatísticas reais. Filtre por pares/ímpares, somatório, consecutivos e mais. Verificamos se a combinação já foi sorteada.",
 };
 
 export default async function SugerirPage() {

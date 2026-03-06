@@ -1,10 +1,11 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { getStats } from "@/lib/stats";
 import LastDraws from "@/components/LastDraws";
 
 export const metadata: Metadata = {
-  title: "Últimos Sorteios da Mega-Sena | Mega Sena Stats",
-  description: "Resultados dos últimos 10 sorteios da Mega-Sena com dezenas, prêmio e número de ganhadores. Veja também em quais dias da semana mais há sorteios.",
+  title: "Resultado dos Últimos Sorteios da Mega-Sena | Mega Sena Stats",
+  description: "Veja os resultados dos últimos sorteios da Mega-Sena com dezenas, prêmio e ganhadores. Histórico atualizado automaticamente após cada concurso.",
 };
 
 export default async function SorteiosPage() {
@@ -15,6 +16,18 @@ export default async function SorteiosPage() {
 
   return (
     <section className="space-y-8">
+      {/* Banner CTA */}
+      <Link
+        href="/sugerir-numeros"
+        className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4 hover:bg-green-100 transition"
+      >
+        <span className="text-2xl">🎯</span>
+        <div>
+          <p className="font-semibold text-green-800">Monte sua aposta baseada em estatísticas</p>
+          <p className="text-sm text-green-600">Use os dados históricos e gere uma combinação inédita →</p>
+        </div>
+      </Link>
+
       <div>
         <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Últimos 10 sorteios</h2>
         <p className="text-slate-400 text-sm mb-6">Resultados mais recentes da Mega-Sena.</p>

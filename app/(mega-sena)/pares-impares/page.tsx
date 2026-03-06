@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { getStats } from "@/lib/stats";
 
 export const metadata: Metadata = {
-  title: "Pares e Ímpares na Mega-Sena | Mega Sena Stats",
-  description: "Quantos números pares e ímpares saem em cada sorteio da Mega-Sena? Veja a distribuição completa e descubra qual combinação aparece mais.",
+  title: "Pares e Ímpares na Mega-Sena — Qual Combinação Sai Mais? | Mega Sena Stats",
+  description: "Quantos números pares e ímpares saem em cada sorteio da Mega-Sena? Distribuição completa em mais de 2.900 sorteios. Descubra qual combinação é a mais comum.",
 };
 
 export default async function ParesImparesPage() {
@@ -17,6 +18,18 @@ export default async function ParesImparesPage() {
 
   return (
     <section>
+      {/* Banner CTA */}
+      <Link
+        href="/sugerir-numeros"
+        className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4 mb-6 hover:bg-green-100 transition"
+      >
+        <span className="text-2xl">🎯</span>
+        <div>
+          <p className="font-semibold text-green-800">Monte sua aposta baseada em estatísticas</p>
+          <p className="text-sm text-green-600">Filtre por pares e ímpares e gere uma combinação inédita →</p>
+        </div>
+      </Link>
+
       <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Distribuição de pares e ímpares</h2>
       <p className="text-slate-400 text-sm mb-8">
         Em quantos sorteios saíram 0, 1, 2 ... 6 números pares? Média histórica: <strong className="text-[#005CA9]">{pares_impares.media_pares} pares</strong> por sorteio.

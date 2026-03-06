@@ -1,10 +1,11 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { getStats, formatMoney } from "@/lib/stats";
 import CuriCard from "@/components/CuriCard";
 
 export const metadata: Metadata = {
-  title: "Curiosidades e Recordes da Mega-Sena | Mega Sena Stats",
-  description: "Probabilidades de ganhar a Mega-Sena com 6, 7 e 8 números. Maior prêmio da história, primeiro sorteio, recordes e fatos curiosos.",
+  title: "Curiosidades e Recordes da Mega-Sena — Fatos Surpreendentes | Mega Sena Stats",
+  description: "Qual a probabilidade de ganhar a Mega-Sena? Maior prêmio da história, primeiro sorteio, recordes e curiosidades que você não sabia sobre a loteria.",
 };
 
 // C(n, k) — combinações
@@ -30,6 +31,18 @@ export default async function CuriosidadesPage() {
 
   return (
     <section className="space-y-8">
+      {/* Banner CTA */}
+      <Link
+        href="/sugerir-numeros"
+        className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4 hover:bg-green-100 transition"
+      >
+        <span className="text-2xl">🎯</span>
+        <div>
+          <p className="font-semibold text-green-800">Monte sua aposta baseada em estatísticas</p>
+          <p className="text-sm text-green-600">Use filtros inteligentes e gere uma combinação inédita →</p>
+        </div>
+      </Link>
+
       <div>
         <h2 className="text-xl font-bold text-[#1a1a2e] mb-4">🏆 Recordes históricos</h2>
         <div className="grid md:grid-cols-2 gap-4">

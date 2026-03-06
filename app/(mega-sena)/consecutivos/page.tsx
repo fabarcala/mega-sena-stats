@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { getStats } from "@/lib/stats";
 
 export const metadata: Metadata = {
-  title: "Números Consecutivos na Mega-Sena | Mega Sena Stats",
-  description: "Com que frequência aparecem números consecutivos nos sorteios da Mega-Sena? Veja a distribuição completa de pares consecutivos por sorteio.",
+  title: "Números Consecutivos na Mega-Sena — Vale a Pena Apostar? | Mega Sena Stats",
+  description: "Números consecutivos saem mais do que você imagina na Mega-Sena. Veja a distribuição completa em todos os sorteios e descubra o que os dados dizem.",
 };
 
 export default async function ConsecutivosPage() {
@@ -23,6 +24,18 @@ export default async function ConsecutivosPage() {
 
   return (
     <section>
+      {/* Banner CTA */}
+      <Link
+        href="/sugerir-numeros"
+        className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4 mb-6 hover:bg-green-100 transition"
+      >
+        <span className="text-2xl">🎯</span>
+        <div>
+          <p className="font-semibold text-green-800">Monte sua aposta baseada em estatísticas</p>
+          <p className="text-sm text-green-600">Escolha se quer consecutivos ou não e gere uma combinação inédita →</p>
+        </div>
+      </Link>
+
       <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Números consecutivos por sorteio</h2>
       <p className="text-slate-400 text-sm mb-8">
         Com que frequência saem pares de números consecutivos (ex: 23 e 24) nos sorteios da Mega-Sena.

@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { getStats } from "@/lib/stats";
 
 export const metadata: Metadata = {
-  title: "Frequência por Faixa de Dezenas | Mega Sena Stats",
-  description: "Quais faixas de números (1–10, 11–20...) aparecem mais nos sorteios da Mega-Sena? Análise da distribuição das dezenas por intervalo.",
+  title: "Frequência por Faixa de Dezenas na Mega-Sena | Mega Sena Stats",
+  description: "Quais faixas de números (1–10, 11–20...) saem mais na Mega-Sena? Veja a distribuição completa das dezenas por intervalo em todos os sorteios da história.",
 };
 
 export default async function FaixasPage() {
@@ -16,6 +17,18 @@ export default async function FaixasPage() {
 
   return (
     <section>
+      {/* Banner CTA */}
+      <Link
+        href="/sugerir-numeros"
+        className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4 mb-6 hover:bg-green-100 transition"
+      >
+        <span className="text-2xl">🎯</span>
+        <div>
+          <p className="font-semibold text-green-800">Monte sua aposta baseada em estatísticas</p>
+          <p className="text-sm text-green-600">Distribua suas dezenas por faixas e gere uma combinação inédita →</p>
+        </div>
+      </Link>
+
       <h2 className="text-xl font-bold text-[#1a1a2e] mb-2">Frequência por faixa de dezenas</h2>
       <p className="text-slate-400 text-sm mb-8">
         Distribuição das dezenas sorteadas por intervalo ao longo de {meta.total_concursos} concursos (6 dezenas por sorteio = {total.toLocaleString("pt-BR")} ocorrências no total).
