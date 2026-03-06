@@ -63,6 +63,20 @@ export default async function ParesImparesPage() {
           <p className="text-xs text-slate-400 mt-1">Raros — ocorrem em menos de 3% dos casos</p>
         </div>
       </div>
+
+      {/* Texto explicativo */}
+      <div className="mt-6 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <h3 className="text-base font-bold text-[#1a1a2e]">Por que a distribuição forma uma curva em sino?</h3>
+        <p>
+          Dos 60 números da Mega-Sena, exatamente 30 são pares e 30 são ímpares. Ao sortear 6 dezenas aleatoriamente, a probabilidade de cada possível combinação de pares/ímpares segue uma <strong>distribuição binomial</strong> — que, visualmente, forma exatamente a curva em sino que você vê no gráfico.
+        </p>
+        <p>
+          A combinação mais provável matematicamente é 3 pares + 3 ímpares, e os dados históricos confirmam: ela é a mais frequente. Combinações extremas como 6 pares ou 6 ímpares são raras porque exigem que todas as dezenas sorteadas venham de um único grupo — e há muito menos combinações possíveis dessa forma.
+        </p>
+        <p>
+          <strong>Para apostadores:</strong> apostas com uma distribuição equilibrada (2-4 ou 3-3 pares/ímpares) refletem o padrão histórico mais comum. Isso não aumenta as chances de ganhar na sena — toda combinação válida tem a mesma probabilidade — mas alinha sua aposta com o comportamento estatístico dos sorteios.
+        </p>
+      </div>
     </section>
   );
 }

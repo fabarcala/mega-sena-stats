@@ -44,6 +44,20 @@ export default async function FaixasPage() {
           💡 A distribuição é bastante equilibrada entre as faixas, como esperado num sorteio aleatório — nenhuma faixa favorece significativamente as outras.
         </p>
       </div>
+
+      {/* Texto explicativo */}
+      <div className="mt-6 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <h3 className="text-base font-bold text-[#1a1a2e]">O que as faixas revelam sobre a aleatoriedade do sorteio?</h3>
+        <p>
+          Os 60 números da Mega-Sena são divididos em 6 faixas de 10 dezenas cada (1–10, 11–20... 51–60). Como o sorteio é aleatório, cada faixa deveria ter, no longo prazo, exatamente a mesma participação: aproximadamente 1/6 do total de dezenas sorteadas. O gráfico acima mostra se isso se confirma na prática.
+        </p>
+        <p>
+          Pequenas variações entre as faixas são esperadas e naturais — elas não indicam tendência ou viés. Quanto mais concursos acumulados, mais as frequências tendem a se igualar. É o mesmo princípio de jogar uma moeda muitas vezes: no longo prazo, cara e coroa se equilibram.
+        </p>
+        <p>
+          <strong>Dica de aposta:</strong> muitos apostadores distribuem suas 6 dezenas entre diferentes faixas para cobrir toda a tabela numeral. Essa estratégia não altera matematicamente a probabilidade de ganhar, mas evita apostas concentradas em um único intervalo — o que, historicamente, é menos comum nos sorteios.
+        </p>
+      </div>
     </section>
   );
 }

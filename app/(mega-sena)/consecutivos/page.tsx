@@ -63,6 +63,20 @@ export default async function ConsecutivosPage() {
           💡 <strong>{((consecutivos.um_par / total) * 100).toFixed(0)}%</strong> dos sorteios têm pelo menos 1 par de consecutivos — é mais comum do que parece, por isso não necessariamente deve ser evitado.
         </p>
       </div>
+
+      {/* Texto explicativo */}
+      <div className="mt-6 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <h3 className="text-base font-bold text-[#1a1a2e]">Por que consecutivos aparecem com tanta frequência?</h3>
+        <p>
+          Muitos apostadores evitam números consecutivos achando que são "improváveis". Mas a matemática diz o contrário: ao sortear 6 números aleatórios entre 1 e 60, a probabilidade de que <em>nenhum</em> par seja consecutivo é na verdade menor do que a de ter pelo menos um par. Isso acontece porque existem muito mais combinações possíveis com consecutivos do que sem.
+        </p>
+        <p>
+          Pense assim: há 60 números e 59 pares consecutivos possíveis (1-2, 2-3, ..., 59-60). Com 6 dezenas sorteadas, é estatisticamente mais provável acertar pelo menos um desses pares do que evitar todos. Os dados históricos da Mega-Sena confirmam isso com precisão.
+        </p>
+        <p>
+          <strong>Conclusão prática:</strong> não há razão para evitar consecutivos na sua aposta. Uma combinação com um par consecutivo tem exatamente a mesma probabilidade de ganhar na sena do que qualquer outra combinação — incluindo as que não têm nenhum consecutivo.
+        </p>
+      </div>
     </section>
   );
 }

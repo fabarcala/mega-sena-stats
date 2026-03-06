@@ -50,6 +50,23 @@ export default async function FrequenciaPage() {
 
       {/* Spot 2 — Após o gráfico */}
       <AdUnit slot="9300468307" />
+
+      {/* Texto explicativo */}
+      <div className="mt-8 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <h3 className="text-base font-bold text-[#1a1a2e]">O que significa a frequência de cada número?</h3>
+        <p>
+          A Mega-Sena sorteia 6 dezenas entre 1 e 60 em cada concurso. Como são 60 números disponíveis, cada um tem, em teoria, exatamente a mesma chance de ser sorteado: aproximadamente 10% por concurso (6 ÷ 60). Ao longo de milhares de sorteios, essa probabilidade tende a se equilibrar — é o que estatísticos chamam de <strong>Lei dos Grandes Números</strong>.
+        </p>
+        <p>
+          O gráfico acima mostra quantas vezes cada número foi sorteado desde o primeiro concurso da Mega-Sena, em 1996. Pequenas variações entre os números são completamente normais e esperadas — elas não indicam que certos números são "sortudos" ou têm mais chance de sair no próximo sorteio.
+        </p>
+        <p>
+          A diferença entre o número mais e o menos sorteado tende a ser pequena em relação ao total de concursos. Isso confirma que o sorteio é aleatório e equilibrado. Ainda assim, acompanhar a frequência histórica é uma forma legítima de entender o comportamento passado dos números — e é por isso que essa é a estatística mais consultada do site.
+        </p>
+        <p className="text-xs text-slate-400">
+          💡 Quer usar a frequência para montar sua aposta? Acesse <a href="/sugerir-numeros" className="underline text-[#005CA9]">Sugerir números</a> e filtre por mais frequentes, atrasados ou de forma aleatória.
+        </p>
+      </div>
     </section>
   );
 }

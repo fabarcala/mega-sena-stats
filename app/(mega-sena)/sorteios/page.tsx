@@ -46,6 +46,19 @@ export default async function SorteiosPage() {
           </div>
         </div>
       </div>
+      {/* Texto explicativo */}
+      <div className="mt-4 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <h3 className="text-base font-bold text-[#1a1a2e]">Quando a Mega-Sena é sorteada?</h3>
+        <p>
+          A Mega-Sena realiza sorteios às <strong>quartas-feiras e sábados</strong>, sempre às 20h (horário de Brasília), transmitidos ao vivo pela TV Caixa e pelo canal oficial da Caixa no YouTube. Em datas especiais — como a Mega da Virada no dia 31 de dezembro — podem ocorrer sorteios extraordinários fora do calendário regular.
+        </p>
+        <p>
+          O gráfico de distribuição por dia da semana reflete o histórico completo desde 1996. Nos primeiros anos, a Mega-Sena sorteava apenas às quartas e sábados, o que explica por que esses dois dias concentram a grande maioria dos concursos. Sorteios em outros dias correspondem a edições especiais ao longo da história do jogo.
+        </p>
+        <p>
+          Os resultados são oficiais e publicados no site da <a href="https://loterias.caixa.gov.br" target="_blank" rel="noopener noreferrer" className="underline text-[#005CA9]">Caixa Econômica Federal</a>. Este site atualiza os dados automaticamente após cada sorteio.
+        </p>
+      </div>
     </section>
   );
 }

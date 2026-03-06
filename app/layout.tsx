@@ -89,13 +89,7 @@ export default function RootLayout({
             gtag('config', 'G-9FQDZ100W3');
           `}
         </Script>
-        {/* AdSense: tag direta para o rastreador Google encontrar no HTML */}
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script
-          async={true}
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2041860930876012"
-          crossOrigin="anonymous"
-        />
+
       </head>
       <body className={`${geistSans.variable} antialiased`}>
         {children}

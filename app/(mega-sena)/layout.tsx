@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { getStats } from "@/lib/stats";
 import NumberBall from "@/components/NumberBall";
 import Sidebar from "@/components/Sidebar";
@@ -9,6 +10,13 @@ export default async function MegaSenaLayout({ children }: { children: React.Rea
 
   return (
     <main className="min-h-screen bg-white text-[#1a1a2e]">
+      {/* AdSense — carrega apenas em páginas com conteúdo */}
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2041860930876012"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       {/* Header */}
       <header className="bg-[#005CA9] text-white">
         <div className="max-w-6xl mx-auto px-4 py-8">

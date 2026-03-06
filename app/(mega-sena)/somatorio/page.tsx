@@ -68,6 +68,20 @@ export default async function SomatorioPage() {
           <p className="text-xs text-slate-400 mt-1">Mínimo e máximo histórico</p>
         </div>
       </div>
+
+      {/* Texto explicativo */}
+      <div className="mt-6 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <h3 className="text-base font-bold text-[#1a1a2e]">Por que o somatório segue uma curva em sino?</h3>
+        <p>
+          A menor soma possível na Mega-Sena seria 1+2+3+4+5+6 = <strong>21</strong>, e a maior seria 55+56+57+58+59+60 = <strong>345</strong>. Na prática, sorteios com somas extremas são raríssimos porque exigiriam que todas as dezenas viessem de um único extremo da tabela.
+        </p>
+        <p>
+          O <strong>Teorema Central do Limite</strong> explica a curva em sino: ao somar várias variáveis aleatórias independentes (as 6 dezenas), o resultado tende a se concentrar em torno da média. Com 60 números de 1 a 60, a média esperada é 30,5 por dezena — ou seja, aproximadamente 183 para a soma de 6 dezenas. O histograma confirma esse padrão com precisão.
+        </p>
+        <p>
+          <strong>Aplicação prática:</strong> apostas com somatório muito baixo (abaixo de 120) ou muito alto (acima de 240) ocorrem em uma minoria dos sorteios históricos. Se você quer que sua aposta reflita os padrões mais comuns, escolha dezenas cuja soma total fique na faixa central do histograma. O <a href="/sugerir-numeros" className="underline text-[#005CA9]">gerador de apostas</a> permite filtrar exatamente por isso.
+        </p>
+      </div>
     </section>
   );
 }

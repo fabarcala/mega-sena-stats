@@ -95,6 +95,23 @@ export default async function CuriosidadesPage() {
           />
         </div>
       </div>
+
+      {/* Texto explicativo */}
+      <div className="mt-6 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <h3 className="text-base font-bold text-[#1a1a2e]">Entendendo as probabilidades da Mega-Sena</h3>
+        <p>
+          A Mega-Sena possui <strong>50.063.860 combinações possíveis</strong> de 6 dezenas entre 1 e 60. Isso significa que, com um jogo simples, você tem 1 chance em mais de 50 milhões de acertar a sena. Para ter uma noção da escala: se uma pessoa jogasse um bilhete diferente por semana, levaria cerca de <strong>500.000 anos</strong> para cobrir todas as combinações.
+        </p>
+        <p>
+          Jogar com mais números aumenta as chances porque cobre mais combinações de uma vez. Um jogo de 9 dezenas, por exemplo, contém 84 combinações de 6 — reduzindo a chance de 1 em 50 milhões para aproximadamente 1 em 600 mil. O preço, porém, também aumenta proporcionalmente.
+        </p>
+        <p>
+          O fato de nenhuma combinação ter se repetido em todos os sorteios da história não é surpreendente: com 50 milhões de possibilidades e pouco mais de 2.900 concursos realizados, a chance de repetição seria extremamente baixa mesmo sem nenhum controle. É pura matemática combinatória.
+        </p>
+        <p className="text-xs text-slate-400">
+          💡 Curioso sobre como montar uma aposta baseada em estatísticas? Acesse <a href="/sugerir-numeros" className="underline text-[#005CA9]">Sugerir números</a>.
+        </p>
+      </div>
     </section>
   );
 }
