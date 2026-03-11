@@ -1,17 +1,17 @@
 {
   "meta": {
-    "total_concursos": 2981,
-    "ultimo_concurso": 2981,
-    "ultima_data": "07/03/2026",
+    "total_concursos": 2982,
+    "ultimo_concurso": 2982,
+    "ultima_data": "10/03/2026",
     "ultimas_dezenas": [
-      "15",
-      "22",
-      "27",
-      "32",
-      "50",
+      "02",
+      "35",
+      "41",
+      "46",
+      "49",
       "58"
     ],
-    "gerado_em": "2026-03-08T03:31:59.962759"
+    "gerado_em": "2026-03-11T03:27:34.478196"
   },
   "frequencia": [
     {
@@ -21,8 +21,8 @@
     },
     {
       "numero": 2,
-      "vezes": 296,
-      "percentual": 9.9
+      "vezes": 297,
+      "percentual": 10.0
     },
     {
       "numero": 3,
@@ -186,8 +186,8 @@
     },
     {
       "numero": 35,
-      "vezes": 314,
-      "percentual": 10.5
+      "vezes": 315,
+      "percentual": 10.6
     },
     {
       "numero": 36,
@@ -216,7 +216,7 @@
     },
     {
       "numero": 41,
-      "vezes": 307,
+      "vezes": 308,
       "percentual": 10.3
     },
     {
@@ -241,7 +241,7 @@
     },
     {
       "numero": 46,
-      "vezes": 315,
+      "vezes": 316,
       "percentual": 10.6
     },
     {
@@ -256,8 +256,8 @@
     },
     {
       "numero": 49,
-      "vezes": 302,
-      "percentual": 10.1
+      "vezes": 303,
+      "percentual": 10.2
     },
     {
       "numero": 50,
@@ -301,7 +301,7 @@
     },
     {
       "numero": 58,
-      "vezes": 283,
+      "vezes": 284,
       "percentual": 9.5
     },
     {
@@ -354,7 +354,7 @@
     },
     {
       "numero": 46,
-      "vezes": 315
+      "vezes": 316
     }
   ],
   "menos_sorteados": [
@@ -402,63 +402,63 @@
   "atrasados": [
     {
       "numero": 4,
-      "ausente_ha": 32
+      "ausente_ha": 33
     },
     {
       "numero": 25,
-      "ausente_ha": 28
+      "ausente_ha": 29
     },
     {
       "numero": 54,
-      "ausente_ha": 28
+      "ausente_ha": 29
     },
     {
       "numero": 48,
-      "ausente_ha": 24
+      "ausente_ha": 25
     },
     {
       "numero": 55,
-      "ausente_ha": 20
+      "ausente_ha": 21
     },
     {
       "numero": 29,
-      "ausente_ha": 19
+      "ausente_ha": 20
     },
     {
       "numero": 34,
-      "ausente_ha": 18
+      "ausente_ha": 19
     },
     {
       "numero": 30,
-      "ausente_ha": 17
+      "ausente_ha": 18
     },
     {
       "numero": 23,
-      "ausente_ha": 16
+      "ausente_ha": 17
     },
     {
       "numero": 57,
-      "ausente_ha": 16
+      "ausente_ha": 17
     },
     {
       "numero": 60,
-      "ausente_ha": 14
+      "ausente_ha": 15
     },
     {
       "numero": 11,
-      "ausente_ha": 13
+      "ausente_ha": 14
     },
     {
       "numero": 26,
-      "ausente_ha": 13
+      "ausente_ha": 14
     },
     {
       "numero": 36,
-      "ausente_ha": 13
+      "ausente_ha": 14
     },
     {
-      "numero": 2,
-      "ausente_ha": 12
+      "numero": 5,
+      "ausente_ha": 13
     }
   ],
   "somatorio": {
@@ -492,7 +492,7 @@
       },
       {
         "faixa": "225-252",
-        "count": 332
+        "count": 333
       },
       {
         "faixa": "252-278",
@@ -510,7 +510,7 @@
   },
   "pares_impares": {
     "distribuicao": {
-      "3": 920,
+      "3": 921,
       "0": 39,
       "2": 718,
       "4": 722,
@@ -521,22 +521,22 @@
     "media_pares": 3.01
   },
   "faixas": {
-    "1-10": 3015,
+    "1-10": 3016,
     "11-20": 2945,
     "21-30": 2894,
-    "31-40": 3057,
-    "41-50": 3011,
-    "51-60": 2964
+    "31-40": 3058,
+    "41-50": 3014,
+    "51-60": 2965
   },
   "consecutivos": {
-    "nenhum": 1724,
+    "nenhum": 1725,
     "um_par": 1044,
     "dois_pares": 205,
     "tres_ou_mais": 8
   },
   "por_dia": {
     "Segunda": 33,
-    "Terça": 203,
+    "Terça": 204,
     "Quarta": 1014,
     "Quinta": 214,
     "Sexta": 18,
@@ -3524,24 +3524,10 @@
     "6,9,13,20,42,50",
     "18,27,37,43,47,53",
     "3,14,27,33,43,45",
-    "15,22,27,32,50,58"
+    "15,22,27,32,50,58",
+    "2,35,41,46,49,58"
   ],
   "ultimos_10": [
-    {
-      "concurso": 2972,
-      "data": "12/02/2026",
-      "dezenas": [
-        "09",
-        "10",
-        "15",
-        "46",
-        "49",
-        "51"
-      ],
-      "acumulou": true,
-      "ganhadores_sena": 0,
-      "premio_sena": 0.0
-    },
     {
       "concurso": 2973,
       "data": "14/02/2026",
@@ -3671,6 +3657,21 @@
         "27",
         "32",
         "50",
+        "58"
+      ],
+      "acumulou": true,
+      "ganhadores_sena": 0,
+      "premio_sena": 0.0
+    },
+    {
+      "concurso": 2982,
+      "data": "10/03/2026",
+      "dezenas": [
+        "02",
+        "35",
+        "41",
+        "46",
+        "49",
         "58"
       ],
       "acumulou": true,
