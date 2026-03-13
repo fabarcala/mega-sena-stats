@@ -1,17 +1,17 @@
 {
   "meta": {
-    "total_concursos": 2982,
-    "ultimo_concurso": 2982,
-    "ultima_data": "10/03/2026",
+    "total_concursos": 2983,
+    "ultimo_concurso": 2983,
+    "ultima_data": "12/03/2026",
     "ultimas_dezenas": [
-      "02",
-      "35",
-      "41",
-      "46",
-      "49",
-      "58"
+      "03",
+      "15",
+      "30",
+      "32",
+      "40",
+      "52"
     ],
-    "gerado_em": "2026-03-11T03:27:34.478196"
+    "gerado_em": "2026-03-13T03:30:41.570769"
   },
   "frequencia": [
     {
@@ -26,7 +26,7 @@
     },
     {
       "numero": 3,
-      "vezes": 277,
+      "vezes": 278,
       "percentual": 9.3
     },
     {
@@ -86,7 +86,7 @@
     },
     {
       "numero": 15,
-      "vezes": 268,
+      "vezes": 269,
       "percentual": 9.0
     },
     {
@@ -117,7 +117,7 @@
     {
       "numero": 21,
       "vezes": 249,
-      "percentual": 8.4
+      "percentual": 8.3
     },
     {
       "numero": 22,
@@ -161,7 +161,7 @@
     },
     {
       "numero": 30,
-      "vezes": 313,
+      "vezes": 314,
       "percentual": 10.5
     },
     {
@@ -171,8 +171,8 @@
     },
     {
       "numero": 32,
-      "vezes": 317,
-      "percentual": 10.6
+      "vezes": 318,
+      "percentual": 10.7
     },
     {
       "numero": 33,
@@ -211,8 +211,8 @@
     },
     {
       "numero": 40,
-      "vezes": 281,
-      "percentual": 9.4
+      "vezes": 282,
+      "percentual": 9.5
     },
     {
       "numero": 41,
@@ -271,7 +271,7 @@
     },
     {
       "numero": 52,
-      "vezes": 300,
+      "vezes": 301,
       "percentual": 10.1
     },
     {
@@ -350,7 +350,7 @@
     },
     {
       "numero": 32,
-      "vezes": 317
+      "vezes": 318
     },
     {
       "numero": 46,
@@ -376,19 +376,19 @@
     },
     {
       "numero": 15,
-      "vezes": 268
+      "vezes": 269
     },
     {
       "numero": 31,
       "vezes": 275
     },
     {
-      "numero": 3,
+      "numero": 48,
       "vezes": 277
     },
     {
-      "numero": 48,
-      "vezes": 277
+      "numero": 3,
+      "vezes": 278
     },
     {
       "numero": 7,
@@ -402,62 +402,62 @@
   "atrasados": [
     {
       "numero": 4,
-      "ausente_ha": 33
+      "ausente_ha": 34
     },
     {
       "numero": 25,
-      "ausente_ha": 29
+      "ausente_ha": 30
     },
     {
       "numero": 54,
-      "ausente_ha": 29
+      "ausente_ha": 30
     },
     {
       "numero": 48,
-      "ausente_ha": 25
+      "ausente_ha": 26
     },
     {
       "numero": 55,
-      "ausente_ha": 21
+      "ausente_ha": 22
     },
     {
       "numero": 29,
-      "ausente_ha": 20
+      "ausente_ha": 21
     },
     {
       "numero": 34,
-      "ausente_ha": 19
-    },
-    {
-      "numero": 30,
-      "ausente_ha": 18
+      "ausente_ha": 20
     },
     {
       "numero": 23,
-      "ausente_ha": 17
+      "ausente_ha": 18
     },
     {
       "numero": 57,
-      "ausente_ha": 17
+      "ausente_ha": 18
     },
     {
       "numero": 60,
-      "ausente_ha": 15
+      "ausente_ha": 16
     },
     {
       "numero": 11,
-      "ausente_ha": 14
+      "ausente_ha": 15
     },
     {
       "numero": 26,
-      "ausente_ha": 14
+      "ausente_ha": 15
     },
     {
       "numero": 36,
-      "ausente_ha": 14
+      "ausente_ha": 15
     },
     {
       "numero": 5,
+      "ausente_ha": 14
+    },
+    {
+      "numero": 59,
       "ausente_ha": 13
     }
   ],
@@ -484,7 +484,7 @@
       },
       {
         "faixa": "172-198",
-        "count": 734
+        "count": 735
       },
       {
         "faixa": "198-225",
@@ -513,7 +513,7 @@
       "3": 921,
       "0": 39,
       "2": 718,
-      "4": 722,
+      "4": 723,
       "5": 281,
       "1": 263,
       "6": 38
@@ -521,15 +521,15 @@
     "media_pares": 3.01
   },
   "faixas": {
-    "1-10": 3016,
-    "11-20": 2945,
-    "21-30": 2894,
-    "31-40": 3058,
+    "1-10": 3017,
+    "11-20": 2946,
+    "21-30": 2895,
+    "31-40": 3060,
     "41-50": 3014,
-    "51-60": 2965
+    "51-60": 2966
   },
   "consecutivos": {
-    "nenhum": 1725,
+    "nenhum": 1726,
     "um_par": 1044,
     "dois_pares": 205,
     "tres_ou_mais": 8
@@ -538,7 +538,7 @@
     "Segunda": 33,
     "Terça": 204,
     "Quarta": 1014,
-    "Quinta": 214,
+    "Quinta": 215,
     "Sexta": 18,
     "Sábado": 1407,
     "Domingo": 92
@@ -3525,24 +3525,10 @@
     "18,27,37,43,47,53",
     "3,14,27,33,43,45",
     "15,22,27,32,50,58",
-    "2,35,41,46,49,58"
+    "2,35,41,46,49,58",
+    "3,15,30,32,40,52"
   ],
   "ultimos_10": [
-    {
-      "concurso": 2973,
-      "data": "14/02/2026",
-      "dezenas": [
-        "16",
-        "24",
-        "27",
-        "31",
-        "45",
-        "46"
-      ],
-      "acumulou": true,
-      "ganhadores_sena": 0,
-      "premio_sena": 0.0
-    },
     {
       "concurso": 2974,
       "data": "19/02/2026",
@@ -3673,6 +3659,21 @@
         "46",
         "49",
         "58"
+      ],
+      "acumulou": true,
+      "ganhadores_sena": 0,
+      "premio_sena": 0.0
+    },
+    {
+      "concurso": 2983,
+      "data": "12/03/2026",
+      "dezenas": [
+        "03",
+        "15",
+        "30",
+        "32",
+        "40",
+        "52"
       ],
       "acumulou": true,
       "ganhadores_sena": 0,
